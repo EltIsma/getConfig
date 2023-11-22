@@ -22,7 +22,7 @@ func Load(path string) (*Config, error) {
 	}
 
 	var cfg Config
-	err = yaml.Unmarshal(configInfo, cfg)
+	err = yaml.Unmarshal(configInfo, &cfg)
 	if err != nil {
 		return nil, errors.New("Failed to unmarshal date from httpConfig file: " + err.Error())
 	}
